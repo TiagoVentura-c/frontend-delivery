@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { formatPrice } from './helpers'
-import { Product } from './types'
 
 type Props = {
     amount: number;
