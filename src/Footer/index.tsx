@@ -10,9 +10,9 @@ function Footer(){
         <footer className='main-footer'>
             Todos os direitos reservados
             <div className='footer-icons'>
-                <a href="" target='_new'><YoutubeIcon/></a>
-                <a href="" target='_new'><InstagramIcon/></a>
-                <a href="" target='_new'><LinkedinIcon/></a>
+                <a href="youtube.com" target='_new'><YoutubeIcon/></a>
+                <a href="youtube.com" target='_new'><InstagramIcon/></a>
+                <a href="youtube.com" target='_new'><LinkedinIcon/></a>
             </div>
         </footer>
     )
