@@ -5,13 +5,19 @@ type Props = {
     amount: number;
     totalPrice: number;
     onSubmit: () => void;
+    handleOnChange: (name: string) => void;
 }
 
-export function OrderSummary({ amount, totalPrice, onSubmit }: Props){
+export function OrderSummary({ amount, totalPrice, onSubmit, handleOnChange }: Props){
 
     return(
         <div className='order-summary-container'>
             <div className='order-summary-content'>
+            
+            <div className='orders-content-name'>
+                <input onChange={(e)=>handleOnChange(e.target.value)} 
+                className='orders-content-input' placeholder='Digite seu nome' type="text" />
+            </div>
                 <div>
                 <span className='amount-selected-container'>
                     <strong className='amount-selected'>{amount}</strong>

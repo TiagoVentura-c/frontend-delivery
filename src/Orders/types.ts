@@ -17,5 +17,6 @@ type ProductId = {
 }
 
 export type OrderPayload = {
+    nameClient: string;
     products: ProductId[];
 } & OrderLocationData;

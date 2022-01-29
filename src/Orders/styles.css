@@ -293,3 +293,19 @@
     }
   }
   
+
+.orders-content-name{
+  display: flex;
+  height: 40px;
+  border-radius: 50px;
+  width: 30%;
+}
+
+.orders-content-input{
+  height: 40px;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: none;
+    flex: 2;
+    font-size: 16px;
+}

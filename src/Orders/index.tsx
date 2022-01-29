@@ -23,6 +23,8 @@ function Orders() {
         return sum + item.price
     }, 0)
 
+    const [name, setName] = useState<string>('')
+
     useEffect(() => {
         fetchProducts()
             .then(response => setProduct(response.data))
@@ -44,8 +46,9 @@ function Orders() {
       const handleSubmit = () => {
         const productsIds = selectedProducts.map(({ id }) => ({ id }));
         const payload = {
+          nameClient: name,
           ...orderLocation!,
-          products: productsIds
+          products: productsIds,
         }
       
         saveOrder(payload).then((response) => {
@@ -55,6 +58,10 @@ function Orders() {
           .catch(() => {
             toast.warning('Erro ao enviar pedido');
           })
+      }
+
+      function handleOnChange(n: string){
+          setName(n);
       }
 
     return (
@@ -67,11 +74,14 @@ function Orders() {
                 selectedProducts={selectedProducts}
             />
             <OrderLocation onChangeLocation={location => setOrderLocation(location) } />
-            <OrderSummary 
+
+            <OrderSummary
+                handleOnChange={handleOnChange}
                 amount={selectedProducts.length}
                 totalPrice={totalPrice}
                 onSubmit={handleSubmit}
                 />
+            
         </div>
         <Footer />
         </>
